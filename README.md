@@ -1,2 +1,17 @@
-# Book-Discovery-Web-Application-Bookee-
-Book Discovery Web App using JavaScript, Bootstrap, and Google Books API. Features include user authentication, randomized and category-based browsing, real-time search, and interactive book cards. Users can preview details in a modal with cover, description, and direct Google Books link. Responsive and user-friendly UI.
+# 📚 Book Discovery Web App
+
+A web application built with **JavaScript, Bootstrap, and the Google Books API** that allows users to explore, search, and preview books.  
+
+## 🚀 Features
+- User authentication (signup/login)
+- Randomized and category-based book browsing  
+- Search books by title, author, or keyword  
+- Interactive book cards with cover, title, description  
+- Modal preview with details + direct Google Books link  
+- Responsive UI with clean design  
+
+## 🛠️ Technologies
+- HTML, CSS, Bootstrap  
+- JavaScript (ES6)  
+- Google Books API  
+- FontAwesome
