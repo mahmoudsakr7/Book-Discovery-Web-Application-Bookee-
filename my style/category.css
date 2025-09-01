@@ -1,0 +1,182 @@
+/* ================== Global Reset ================== */
+* {
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+body {
+  background: linear-gradient(135deg, #f8c190, #ffdea0);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ================== Navbar ================== */
+.mynav {
+  width: 100%;
+  font-family: Pacifico, cursive;
+  color: #a47148;
+  background: none;
+}
+
+.mynav a:hover {
+  color: #a47148;
+  transition: 0.5s;
+}
+
+.input-focus:focus {
+  outline: none;
+  border: 2px solid #a47148;
+  transition: 0.5s;
+}
+
+.search-box {
+  position: relative;
+  font-family: sans-serif;
+}
+
+.search-result {
+  position: absolute;
+  top: 110%;
+  left: 13%;
+  max-height: 450px;
+  list-style: none;
+  background: linear-gradient(135deg, #8a572b, #a1782c);
+  overflow-y: auto;
+  display: none;
+  z-index: 2000;
+}
+
+.search-result div:hover {
+  cursor: pointer;
+  padding-left: 15px;
+  background: linear-gradient(135deg, #a1782c, #bd9447);
+  transition: 0.5s;
+}
+
+.search-result div img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* Scrollbar */
+.search-result::-webkit-scrollbar,
+.book-description::-webkit-scrollbar,
+.book-dialog::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.search-result::-webkit-scrollbar-thumb,
+.book-description::-webkit-scrollbar-thumb,
+.book-dialog::-webkit-scrollbar-thumb {
+  background: #865b37;
+  border-radius: 10px;
+}
+
+nav input::placeholder {
+  color: #444;
+}
+
+/* ================== Categories ================== */
+.container-color {
+  background: linear-gradient(135deg, #e29e61, #faba82, #e29e61);
+}
+
+.label-background {
+  background: linear-gradient(135deg, #d68e4f, #cf9059, #d68e4f);
+}
+
+.card-hover:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 0 5px #000;
+  transition: 0.7s;
+}
+
+.card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.categories-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.categories-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.categories-scroll::-webkit-scrollbar-thumb {
+  background: #865b37;
+  border-radius: 10px;
+}
+
+.categories-scroll .card {
+  flex: 0 0 auto;
+  width: 150px;
+}
+
+.books-row {
+  margin-top: -100px;
+}
+
+#category {
+  margin-top: 150px;
+}
+
+/* ================== Book Dialog ================== */
+.book-dialog {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 65%;
+  height: 85%;
+  background: linear-gradient(135deg, #ffb16d, #fcca6d);
+}
+
+.close-btn:hover {
+  transform: scale(1.3);
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.book-dialog .row .col {
+  height: 500px;
+}
+
+.dialog-img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.bookd-info {
+  height: 400px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(30px);
+}
+
+.book-description {
+  height: 220px;
+  overflow-y: auto;
+}
+
+/* ================== Footer ================== */
+.facebook-hover:hover   { color: #1877f2; transition: 0.5s; }
+.instagram-hover:hover  { color: #e1306c; transition: 0.5s; }
+.linkedin-hover:hover   { color: #0a66c2; transition: 0.5s; }
+.github-hover:hover     { color: #6e7681; transition: 0.5s; }
+.whatsapp-hover:hover   { color: #25d366; transition: 0.5s; }
