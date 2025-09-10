@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../my style/category.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+
+    <title>Category</title>
+</head>
+
+<body dir="ltr">
+    <!----------------------- Navbar ----------------------->
+    <nav class="navbar navbar-expand-lg mynav pt-4">
+        <div class="container justify-content-between align-items-center">
+
+            <a class="navbar-brand fs-3 text-dark" href="home.html" id="bookee-label">Bookee</a>
+
+            <!-- Search Box -->
+            <div class="search-box w-50 m-auto">
+                <form class="form-inline d-flex justify-content-center">
+                    <input class="input-focus p-2 bg-transparent border border-2 border-dark rounded-2 w-75"
+                        type="search" placeholder="Search" aria-label="Search" id="book-search" oninput="searchBook()">
+                </form>
+                <ul class="search-result w-75 rounded-1" id="search-result">
+                    <div class="d-flex align-items-center p-2"></div>
+                </ul>
+            </div>
+
+            <!-- Navbar Links -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-dark fw-bold" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-dark fw-bold" href="login-page.html">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!----------------------- Category Books ----------------------->
+    <div class="container mt-5 container-color rounded-4 shadow-lg p-0">
+
+        <!-- Category Label -->
+        <div class="container-fluid label-background rounded-top-4 py-1">
+            <h2 class="fw-bold text-center text-white" id="category-name"></h2>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="row justify-content-center px-3" id="category"></div>
+
+        <!----------------------- Book Dialog ----------------------->
+        <dialog class="container rounded-2 book-dialog border border-1 py-3" id="category-book-dialog">
+
+            <button class="btn border-0" id="category-book-close-btn">
+                <i class="fa-solid fa-xmark fs-4"></i>
+            </button>
+
+            <div class="row p-1 d-flex justify-content-center py-2 gap-2">
+
+                <!-- Book Image -->
+                <div class="col-xl-5 col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+                    <img class="dialog-img rounded-3 shadow-lg overflow-hidden" src="" alt="Image not available"
+                        id="category-book-dialog-img">
+                </div>
+
+                <!-- Book Info -->
+                <div class="col-xl-5 col-lg-6 col-md-12 book-info d-flex flex-column justify-content-between">
+                    <h1 class="fw-bolder fs-4 px-2" id="category-book-dialog-title"></h1>
+                    <p class="fs-6 book-description d-flex px-2" id="category-book-dialog-description"></p>
+                    <div class="d-flex justify-content-center w-100">
+                        <button class="btn btn-dark fw-bold w-100 px-2" id="category-book-preview-btn">Preview
+                            Book</button>
+                    </div>
+                </div>
+
+            </div>
+        </dialog>
+    </div>
+
+    <!----------------------- Footer ----------------------->
+    <footer class="container-fluid bg-dark text-center py-5 mt-5">
+        <h1 class="text-white py-2">Mahmoud Sakr</h1>
+        <h2 class="text-white py-2">The designer who codes</h2>
+        <div class="mt-5">
+            <a href="https://www.facebook.com/mahmoudsakr.5851127" class="fs-4 text-light px-3" target="_blank">
+                <i class="fa-brands fa-facebook facebook-hover"></i>
+            </a>
+            <a href="https://www.instagram.com/__mahmoudsakr/" class="fs-4 text-light px-3" target="_blank">
+                <i class="fa-brands fa-instagram instagram-hover"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mahmoud-sakr-10110423a/" class="fs-4 text-light px-3" target="_blank">
+                <i class="fa-brands fa-linkedin linkedin-hover"></i>
+            </a>
+            <a href="https://github.com/mahmoudsakr7" class="fs-4 text-light px-3" target="_blank">
+                <i class="fa-brands fa-github github-hover"></i>
+            </a>
+            <a href="https://wa.me/201060182288" class="fs-4 text-light px-3" target="_blank">
+                <i class="fa-brands fa-whatsapp whatsapp-hover"></i>
+            </a>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS (at the end of body or in head) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../my script/category.js"></script>
+</body>
+
+</html>

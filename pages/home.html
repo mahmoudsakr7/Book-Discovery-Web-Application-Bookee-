@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../my style/home.css">
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
+
+    <title>Home</title>
+</head>
+
+<body>
+    <!----------------------- Navbar ----------------------->
+    <nav class="navbar navbar-expand-sm mynav pt-4">
+        <div class="container justify-content-between align-items-center">
+
+            <!-- Brand -->
+            <a class="navbar-brand fs-3 text-dark" href="#" id="bookee-label">Bookee</a>
+
+            <!-- Search Box -->
+            <div class="search-box w-50 m-auto">
+                <form class="form-inline d-flex justify-content-center">
+                    <input class="input-focus p-2 bg-transparent border border-2 border-dark rounded-2 w-75"
+                        type="search" placeholder="Search" aria-label="Search" id="book-search" oninput="searchBook()">
+                </form>
+                <ul class="search-result w-75 rounded-1" id="search-result">
+                    <div class="d-flex align-items-center p-2"></div>
+                </ul>
+            </div>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links -->
+            <div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-dark fw-bold" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-dark fw-bold" href="login-page.html">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!----------------------- Content ----------------------->
+    <div class="container" style="margin-top: -50px;">
+
+        <!----------------------- Banners ----------------------->
+        <div class="overflow-hidden vh-75 rounded-3 banner-container">
+            <div class="d-flex banner">
+                <img src="../images/banners/banner_1.png" alt="Banner 1">
+                <img src="../images/banners/banner_2.png" alt="Banner 2">
+                <img src="../images/banners/banner_3.png" alt="Banner 3">
+                <img src="../images/banners/banner_4.png" alt="Banner 4">
+                <img src="../images/banners/banner_5.png" alt="Banner 5">
+            </div>
+        </div>
+
+        <!----------------------- Categories ----------------------->
+
+        <div class="container mt-5 container-color rounded-4 shadow-lg p-0">
+
+            <!-- Label -->
+            <div class="container-fluid label-background rounded-top-4 py-1">
+                <h2 class="text-white fw-bold text-center">Categories</h2>
+            </div>
+
+            <!-- Categories Scroll -->
+            <div class="d-flex justify-content-between categories-scroll p-5">
+
+                <div class="card card-hover shadow-sm" onclick="openCategoryPage('electronics')">
+                    <img src="../images/category/Electronics.png" alt="Electronics" class="card-img-top">
+                    <div class="card-footer p-0">
+                        <p class="text-center fw-bold pt-2">Electronics</p>
+                    </div>
+                </div>
+
+                <div class="card card-hover shadow-sm" onclick="openCategoryPage('artificial intelligence')">
+                    <img src="../images/category/AI.png" alt="AI" class="card-img-top">
+                    <div class="card-footer p-0">
+                        <p class="text-center fw-bold pt-2">AI</p>
+                    </div>
+                </div>
+
+                <div class="card card-hover shadow-sm" onclick="openCategoryPage('science')">
+                    <img src="../images/category/Science.png" alt="Science" class="card-img-top">
+                    <div class="card-footer p-0">
+                        <p class="text-center fw-bold pt-2">Science</p>
+                    </div>
+                </div>
+
+                <div class="card card-hover shadow-sm" onclick="openCategoryPage('sports')">
+                    <img src="../images/category/sports.png" alt="Sports" class="card-img-top">
+                    <div class="card-footer p-0">
+                        <p class="text-center fw-bold pt-2">Sports</p>
+                    </div>
+                </div>
+
+                <div class="card card-hover shadow-sm" onclick="openCategoryPage('stories')">
+                    <img src="../images/category/stories.png" alt="Stories" class="card-img-top">
+                    <div class="card-footer p-0">
+                        <p class="text-center fw-bold pt-2">Stories</p>
+                    </div>
+                </div>
+
+                <div class="card card-hover shadow-sm" onclick="openCategoryPage('horror')">
+                    <img src="../images/category/horror.png" alt="Horror" class="card-img-top">
+                    <div class="card-footer p-0">
+                        <p class="text-center fw-bold pt-2">Horror</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!----------------------- New Books ----------------------->
+        <div class="container mt-5 container-color rounded-4 shadow-lg p-0">
+
+            <div class="container-fluid label-background rounded-top-4 py-1">
+                <h2 class="fw-bold text-center text-white">Books you may like</h2>
+            </div>
+
+            <div class="row justify-content-center px-3" id="home-books"></div>
+        </div>
+
+        <!----------------------- Book Dialog ----------------------->
+        <dialog class="container rounded-2 book-dialog border border-1 py-3" id="random-book-dialog">
+
+            <button class="btn border-0 bg-dark rounded-3 btn-sm" id="random-book-close-btn">
+                <i class="fa-solid fa-xmark text-white"></i>
+            </button>
+
+            <div class="row p-1 d-flex justify-content-center py-2 gap-2">
+
+                <!-- Book Image -->
+                <div class="col-xl-5 col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+                    <img class="dialog-img rounded-3 shadow-lg overflow-hidden" src="" alt="Book cover"
+                        id="random-book-dialog-img">
+                </div>
+
+                <!-- Book Info -->
+                <div class="col-xl-5 col-lg-6 col-md-12 book-info d-flex flex-column justify-content-between">
+                    <h1 class="fw-bolder fs-4 px-2" id="random-book-dialog-title"></h1>
+                    <p class="fs-6 book-description d-flex px-2" id="random-book-dialog-description"></p>
+                    <div class="d-flex justify-content-center w-100">
+                        <button class="btn btn-dark fw-bold w-100 px-2" id="random-book-preview-btn">Preview
+                            Book</button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    </div>
+
+    <!----------------------- Footer ----------------------->
+    <footer class="container-fluid bg-dark py-5 mt-5">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+
+            <div class="rounded-circle border border-5 border-white shadow-lg overflow-hidden w-25">
+                <img src="../images/me.jpg" alt="Mahmoud Sakr" class="w-100">
+            </div>
+
+            <div class="text-white m-5 text-center">
+                <h1 class="p-1">Eng. Mahmoud Sakr</h1>
+                <h2 class="p-1">The Designer Who Codes</h2>
+                <div class="p-2">
+                    <a href="https://www.facebook.com/mahmoudsakr.5851127" class="fs-4 text-light px-3" target="_blank">
+                        <i class="fa-brands fa-facebook facebook-hover"></i>
+                    </a>
+                    <a href="https://www.instagram.com/__mahmoudsakr/" class="fs-4 text-light px-3" target="_blank">
+                        <i class="fa-brands fa-instagram instagram-hover"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mahmoud-sakr-10110423a/" class="fs-4 text-light px-3"
+                        target="_blank">
+                        <i class="fa-brands fa-linkedin linkedin-hover"></i>
+                    </a>
+                    <a href="https://github.com/mahmoudsakr7" class="fs-4 text-light px-3" target="_blank">
+                        <i class="fa-brands fa-github github-hover"></i>
+                    </a>
+                    <a href="https://wa.me/201060182288" class="fs-4 text-light px-3" target="_blank">
+                        <i class="fa-brands fa-whatsapp whatsapp-hover"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS (at the end of body or in head) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../my script/home.js"></script>
+</body>
+
+</html>
