@@ -1,0 +1,288 @@
+/* ============================================================
+   Global Styles
+============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+}
+
+body {
+    background: linear-gradient(135deg, #f8c190, #ffdea0);
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ============================================================
+   Navbar
+============================================================ */
+.mynav {
+    color: #a47148 !important;
+    width: 100%;
+    font-family: Pacifico, cursive;
+}
+
+.mynav a:hover {
+    color: #a47148 !important;
+    transition: 0.5s;
+}
+
+nav input::placeholder {
+    color: #444;
+}
+
+.input-focus:focus {
+    outline: none;
+    border: 2px solid #a47148 !important;
+    transition: 0.5s;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    font-family: sans-serif;
+}
+
+.search-result {
+    position: absolute;
+    top: 110%;
+    left: 13%;
+    width: auto;
+    max-height: 450px;
+    overflow-y: auto;
+    display: none;
+    padding: 0;
+    list-style: none;
+    background: linear-gradient(135deg, #8a572b, #a1782c);
+    z-index: 2000;
+    border-radius: 5px;
+}
+
+.search-result div {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.search-result div:hover {
+    cursor: pointer;
+    padding-left: 15px !important;
+    background: linear-gradient(135deg, #a1782c, #bd9447);
+    transition: 0.5s;
+}
+
+.search-result div img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.search-result::-webkit-scrollbar {
+    width: 10px;
+}
+
+.search-result::-webkit-scrollbar-thumb {
+    background: #e0aa7d;
+    border-radius: 10px;
+}
+
+/* ============================================================
+   Banner Gallery
+============================================================ */
+.banner-container {
+    margin-top: 100px;
+    max-width: 100vw;
+    max-height: 450px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #a47148;
+    border-radius: 10px;
+}
+
+.banner {
+    display: flex;
+    animation: scrollBanner 50s infinite alternate linear;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+@keyframes scrollBanner {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-100%);
+    }
+
+    40% {
+        transform: translateX(-100%);
+    }
+
+    45% {
+        transform: translateX(-200%);
+    }
+
+    60% {
+        transform: translateX(-200%);
+    }
+
+    65% {
+        transform: translateX(-300%);
+    }
+
+    80% {
+        transform: translateX(-300%);
+    }
+
+    85% {
+        transform: translateX(-400%);
+    }
+
+    100% {
+        transform: translateX(-400%);
+    }
+}
+
+/* ============================================================
+   Categories
+============================================================ */
+.container-color {
+    background: linear-gradient(135deg, #e29e61, #faba82, #e29e61);
+}
+
+.label-background {
+    background: linear-gradient(135deg, #d68e4f, #cf9059, #d68e4f);
+}
+
+.card-hover:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.7s;
+    box-shadow: 0 0 5px #000 !important;
+}
+
+.card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.categories-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.categories-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.categories-scroll::-webkit-scrollbar-thumb {
+    background: #865b37;
+    border-radius: 10px;
+}
+
+.categories-scroll .card {
+    flex: 0 0 auto;
+    width: 150px;
+}
+
+/* ============================================================
+   Books
+============================================================ */
+.books-row {
+    margin-top: -100px;
+}
+
+#home-books {
+    margin-top: 150px;
+}
+
+/* ============================================================
+   Book Dialog
+============================================================ */
+.book-dialog {
+    position: fixed;
+    top: 5%;
+    left: 0;
+    width: 65%;
+    height: 85%;
+    background: linear-gradient(135deg, #ffb16d, #fcca6d);
+    border-radius: 10px;
+}
+
+.close-btn:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+    border: none !important;
+    outline: none !important;
+}
+
+.dialog-img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.book-description {
+    height: 220px;
+    overflow-y: auto;
+}
+
+.book-description::-webkit-scrollbar,
+.book-dialog::-webkit-scrollbar {
+    width: 10px;
+}
+
+.book-description::-webkit-scrollbar-thumb,
+.book-dialog::-webkit-scrollbar-thumb {
+    background: #865b37;
+    border-radius: 10px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(30px);
+}
+
+/* ============================================================
+   Footer
+============================================================ */
+.facebook-hover:hover {
+    color: #1877F2;
+    transition: 0.5s;
+}
+
+.instagram-hover:hover {
+    color: #E1306C;
+    transition: 0.5s;
+}
+
+.linkedin-hover:hover {
+    color: #0A66C2;
+    transition: 0.5s;
+}
+
+.github-hover:hover {
+    color: #6E7681;
+    transition: 0.5s;
+}
+
+.whatsapp-hover:hover {
+    color: #25D366;
+    transition: 0.5s;
+}
